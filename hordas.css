@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Para evitar barras de rolagem se a imagem for ligeiramente maior */
+}
+
+body {
+    /* Substitua 'sua-imagem-de-fundo.jpg' pelo nome real do seu arquivo de imagem */
+    /* Certifique-se de que a imagem está na pasta 'public' relativa ao seu HTML/CSS */
+    background-image: url('public/6.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área, mantendo a proporção */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    /* Opcional: uma cor de fundo caso a imagem não carregue ou demore */
+    background-color: #333;
+}

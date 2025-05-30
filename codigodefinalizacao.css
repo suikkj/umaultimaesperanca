@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    color: #ecf0f1;
+}
+
+.container {
+    background-color: rgba(14, 14, 14, 0.9);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 320px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+#login-area {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; 
+}
+
+label {
+    text-align: left;
+    color: #bdc3c7;
+    font-weight: 600;
+    margin-bottom: -12px; 
+    font-size: 14px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex; /* Garante que o input ocupe o espaço */
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    padding: 12px;
+    padding-right: 55px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 0 0 0.2rem rgba(120, 120, 120, 0.3);
+    background-color: #333; 
+    box-sizing: border-box; /* Adicionado para consistência e controle de padding */
+    width: 100%; /* Para que o input dentro do wrapper ocupe todo o espaço */
+} 
+
+.toggle-password-visibility {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    color: #bdc3c7;
+    font-size: 0.85em; /* Ajustado para "Ver"/"Ocultar" */
+    font-weight: 600;
+    padding: 2px 5px; /* Pequeno padding para o texto */
+    /* background-color: #4a4a4a; /* Opcional: fundo para o botão de texto */
+    /* border-radius: 3px; */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #666;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(100, 100, 100, 0.5);
+}
+
+
+
+button {
+    padding: 12px 15px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #1a1a1a;
+    border-color: #555;
+}
+
+#feedback {
+    margin-top: 15px;
+    font-size: 14px;
+    min-height: 21px; 
+    font-weight: 500;
+    color: #bdc3c7;
+}

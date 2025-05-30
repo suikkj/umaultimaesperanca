@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça Login na sua Conta</title>
+    <link rel="icon" href="public/Logo.png" type="image/png">
+    <link rel="stylesheet" href="codigodefinalizacao.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Acesso Restrito: Apenas Funcionários.</h1>
+        <div id="login-area">
+            <label for="login-input">Login:</label>
+            <input type="text" id="login-input" placeholder="Usuário" autocomplete="username">
+            <label for="password-input">Senha:</label>
+            <div class="password-wrapper">
+                <input type="password" id="password-input" placeholder="Senha" autocomplete="current-password">
+                <span id="toggle-password-visibility" class="toggle-password-visibility">Ver</span>
+            </div>
+            <button id="submit-button">Entrar</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+    <script src="final_script.js"></script>
+</body>
+</html>

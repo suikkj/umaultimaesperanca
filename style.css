@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Perpetua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000; /* Um fundo escuro para tema de enigma */
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #0e0e0e;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+}
+
+h1 {
+    color: #ffffff; /* Cor de destaque */
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-family: Perpetua;
+}
+
+#question {
+    font-size: 1.3em;
+    color: #bdc3c7;
+    margin-bottom: 25px;
+    min-height: 50px; 
+    line-height: 1.6;
+}
+
+#answer-input {
+    width: calc(100% - 24px); 
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #7f8c8d;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#answer-input:focus {
+    outline: none;;
+}
+
+#answer-input.error-input {
+    border-color: #ff1900; /* Vermelho mais forte */
+    background-color: #f8a6a6; /* Fundo levemente rosado para erro */
+}
+
+@keyframes shake{
+    0%, 100% {transform:translateX(0);}
+    10%,30%,50%,70%,90% {transform:translateX(-6px);}
+    20%,40%,60%,80% {transform:translateX(6px);}
+}
+
+.shake-input{
+    animation: shake 0.5s ease-in-out;
+}
+
+#submit-button {
+    background-color: #000000; /* Laranja para o botão */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Perpetua;
+}
+
+#submit-button:hover {
+    background-color: #ffffff; /* Laranja mais escuro no hover */
+    color: black;
+    transform: scale(1.10);
+    box-shadow: 0 0 8px white;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 1em;
+    min-height: 25px; 
+    font-weight: bold;
+}
+
+#completion-message h2 {
+    color: #2ecc71; /* Verde para sucesso */
+}

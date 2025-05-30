@@ -1,0 +1,20 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Para evitar barras de rolagem se a imagem for ligeiramente maior */
+}
+
+#background-video {
+    position: fixed; /* Fixa o vídeo na viewport */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Garante que cubra toda a largura */
+    min-height: 100%; /* Garante que cubra toda a altura */
+    width: auto; /* Mantém a proporção do vídeo */
+    height: auto; /* Mantém a proporção do vídeo */
+    z-index: -100; /* Coloca o vídeo atrás de qualquer outro conteúdo */
+    object-fit: cover; /* Similar ao background-size: cover; preenche a área, cortando se necessário */
+    background-color: #333; /* Cor de fallback caso o vídeo não carregue ou demore */
+}

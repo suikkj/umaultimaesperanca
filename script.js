@@ -1,164 +1,374 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const enigmas = [
-        {
-            encodedAnswer: "b2RpYXF1ZXRvZG9zYWd1YXJkYW1vcw==", 
-            nextUrl: "odiaquetodosaguardamos.html"
-        },
-        {
-            encodedAnswer: "dW11bHRpbW9hZGV1cw==", 
-            nextUrl: "umultimoadeus.html" 
-        },
-        {
-            encodedAnswer: "ZWNhZg==", 
-            nextUrl: "ecaf.html" 
-        },
-        {
-            encodedAnswer: "dGFtYm9yaWw=", 
-            nextUrl: "tamboril.html" 
-        },
-        {
-            encodedAnswer: "bHVjaWZlcg==", 
-            nextUrl: "luciferinside.html" 
-        },
-        {
-            encodedAnswer: "aG9yZGFz", 
-            nextUrl: "hordas.html" 
-        },
-        {
-            encodedAnswer: "bmlkZXJl", 
-            nextUrl: "nidere.html" 
-        },
-        {
-            encodedAnswer: "dW50aWx0aGVu", 
-            nextUrl: "codigodefinalizacao.html" 
-        },
-        {
-            encodedAnswer: "Z2FyZmllbGRrYXJ0", 
-            nextUrl: "https://x.com/joao_azeve56849/status/1909779523169566848"
-        },
-        {
-            encodedAnswer: "dGV0cmlz", 
-            nextUrl: "https://www.twitch.tv/cellbit"
-        },
-        {
-            encodedAnswer: "ZW5pZ21hZG9tZWRv", 
-            nextUrl: "https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian"
-        },
-        {
-            encodedAnswer: "MTYzNzRfMzUyNg==", 
-            nextUrl: "16374_3526.html"
-        },
-        {
-            encodedAnswer: "MDUyNjNfMjQxNQ==", 
-            nextUrl: "05263_2415.html"
-        }
-    ];
-    // ---------------------------------
-
-    let errorResetTimeoutId = null;
-
-    const answerInputElement = document.getElementById('answer-input');
-    const submitButton = document.getElementById('submit-button');
-    const feedbackElement = document.getElementById('feedback');
-    const enigmaAreaElement = document.getElementById('enigma-area');
-
-    function loadInterfaceState() {
-        if (enigmas.length === 0) {
-            enigmaAreaElement.style.display = 'block';
-            feedbackElement.textContent = 'Nenhum enigma configurado.';
-            answerInputElement.disabled = true;
-            submitButton.disabled = true;
-            return;
-        }
-
-        enigmaAreaElement.style.display = 'block';
-        answerInputElement.value = '';
-        feedbackElement.textContent = '';
-        answerInputElement.classList.remove('error-input');
-        answerInputElement.disabled = false;
-        submitButton.disabled = false;
-        answerInputElement.focus();
-    }
-
-    function normalizeAnswer(text) {
-        return text
-            .normalize('NFD') 
-            .replace(/[\u0300-\u036f]/g, '') 
-            .replace(/\s+/g, '') 
-            .toLowerCase();
-    }
-
-    function checkAnswer() { 
-        if (enigmas.length === 0) return;
-
-        const userAnswerRaw = answerInputElement.value;
-        const normalizedUserAnswer = normalizeAnswer(userAnswerRaw);
-
-        if (!normalizedUserAnswer) {
-            feedbackElement.textContent = 'Tá esquecendo de nada não?';
-            feedbackElement.style.color = '#e74c3c'; 
-            answerInputElement.focus();
-            return;
-        }
-
-        const base64UserAnswer = btoa(normalizedUserAnswer); 
-        let enigmaFound = false;
-
-        for (const enigma of enigmas) {
-            if (base64UserAnswer === enigma.encodedAnswer) {
-                feedbackElement.textContent = '';
-                feedbackElement.style.color = '#2ecc71'; 
-                answerInputElement.classList.remove('error-input');
-
-                if (errorResetTimeoutId) {
-                    clearTimeout(errorResetTimeoutId);
-                    errorResetTimeoutId = null;
-                }
+//
 
 
-                setTimeout(() => {
-                    window.open(enigma.nextUrl, '_blank');
-                    answerInputElement.value = '';
-                    answerInputElement.focus();
-                    
-                });
-                enigmaFound = true;
-                break;
-            }
-        }
 
-        if (!enigmaFound) {
-            feedbackElement.textContent = 'Não tens o que é necessário?';
-            feedbackElement.style.color = '#ff1200'; 
-            answerInputElement.classList.add('error-input');
-            answerInputElement.classList.add('shake-input');
-            answerInputElement.focus();
-            answerInputElement.value = '';
 
-            setTimeout(() => {
-                answerInputElement.classList.remove('shake-input');
-            }, 500);
 
-            if (errorResetTimeoutId) {
-                clearTimeout(errorResetTimeoutId);
-            }
-            errorResetTimeoutId = setTimeout(() => {
-                answerInputElement.classList.remove('error-input');
-                if (feedbackElement.textContent === 'Não tens o que é necessário?') {
-                    feedbackElement.textContent = '';
-                }
-                errorResetTimeoutId = null;
-            }, 3000);
-        }
-    }
 
-    submitButton.addEventListener('click', checkAnswer);
-    answerInputElement.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            checkAnswer();
-        }
-    });
 
-    loadInterfaceState();
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _0x1910(){const _0x562b68=['nidere.html','#ff1200','toLowerCase','16374_3526.html','MTYzNzRfMzUyNg==','disabled','892330mKzwnt','open','add','answer-input','Nenhum\x20enigma\x20configurado.','classList','1AWxNgX','ZWNhZg==','bmlkZXJl','dGFtYm9yaWw=','textContent','4436264ymIxOo','05263_2415.html','5968431pyZrOb','145118tGyTPH','normalize','_blank','hordas.html','b2RpYXF1ZXRvZG9zYWd1YXJkYW1vcw==','luciferinside.html','display','umultimoadeus.html','aG9yZGFz','9iYsKDf','Enter','Não\x20tens\x20o\x20que\x20é\x20necessário?','odiaquetodosaguardamos.html','feedback','4022862uEWtxA','remove','preventDefault','encodedAnswer','key','block','click','ecaf.html','32168090dCpaTz','DOMContentLoaded','value','https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian','addEventListener','https://www.twitch.tv/cellbit','enigma-area','12bWAect','dW11bHRpbW9hZGV1cw==','focus','shake-input','codigodefinalizacao.html','tamboril.html','length','https://x.com/joao_azeve56849/status/1909779523169566848','style','5226636YOUDKe','submit-button','nextUrl','getElementById','dGV0cmlz','dW50aWx0aGVu','#e74c3c','color','ZW5pZ21hZG9tZWRv','error-input'];_0x1910=function(){return _0x562b68;};return _0x1910();}function _0x3a2a(_0x2cff00,_0x1bfc25){const _0x191042=_0x1910();return _0x3a2a=function(_0x3a2aef,_0x49dfe6){_0x3a2aef=_0x3a2aef-0x172;let _0x6f00f=_0x191042[_0x3a2aef];return _0x6f00f;},_0x3a2a(_0x2cff00,_0x1bfc25);}const _0x5b829f=_0x3a2a;(function(_0x39fb17,_0x15595d){const _0x14135c=_0x3a2a,_0x3b6061=_0x39fb17();while(!![]){try{const _0x27f803=parseInt(_0x14135c(0x17b))/0x1*(-parseInt(_0x14135c(0x183))/0x2)+-parseInt(_0x14135c(0x191))/0x3+parseInt(_0x14135c(0x1a0))/0x4*(-parseInt(_0x14135c(0x175))/0x5)+-parseInt(_0x14135c(0x1a9))/0x6+parseInt(_0x14135c(0x182))/0x7+-parseInt(_0x14135c(0x180))/0x8+-parseInt(_0x14135c(0x18c))/0x9*(-parseInt(_0x14135c(0x199))/0xa);if(_0x27f803===_0x15595d)break;else _0x3b6061['push'](_0x3b6061['shift']());}catch(_0x303dab){_0x3b6061['push'](_0x3b6061['shift']());}}}(_0x1910,0xa9a6c),document[_0x5b829f(0x19d)](_0x5b829f(0x19a),()=>{const _0x36f0fc=_0x5b829f,_0x36cb26=[{'encodedAnswer':_0x36f0fc(0x187),'nextUrl':_0x36f0fc(0x18f)},{'encodedAnswer':_0x36f0fc(0x1a1),'nextUrl':_0x36f0fc(0x18a)},{'encodedAnswer':_0x36f0fc(0x17c),'nextUrl':_0x36f0fc(0x198)},{'encodedAnswer':_0x36f0fc(0x17e),'nextUrl':_0x36f0fc(0x1a5)},{'encodedAnswer':'bHVjaWZlcg==','nextUrl':_0x36f0fc(0x188)},{'encodedAnswer':_0x36f0fc(0x18b),'nextUrl':_0x36f0fc(0x186)},{'encodedAnswer':_0x36f0fc(0x17d),'nextUrl':_0x36f0fc(0x1b3)},{'encodedAnswer':_0x36f0fc(0x1ae),'nextUrl':_0x36f0fc(0x1a4)},{'encodedAnswer':'Z2FyZmllbGRrYXJ0','nextUrl':_0x36f0fc(0x1a7)},{'encodedAnswer':_0x36f0fc(0x1ad),'nextUrl':_0x36f0fc(0x19e)},{'encodedAnswer':_0x36f0fc(0x1b1),'nextUrl':_0x36f0fc(0x19c)},{'encodedAnswer':_0x36f0fc(0x173),'nextUrl':_0x36f0fc(0x172)},{'encodedAnswer':'MDUyNjNfMjQxNQ==','nextUrl':_0x36f0fc(0x181)}];let _0xe16a1f=null;const _0x74a2fa=document[_0x36f0fc(0x1ac)](_0x36f0fc(0x178)),_0x5bd06d=document[_0x36f0fc(0x1ac)](_0x36f0fc(0x1aa)),_0x4866f8=document[_0x36f0fc(0x1ac)](_0x36f0fc(0x190)),_0x3fbff5=document[_0x36f0fc(0x1ac)](_0x36f0fc(0x19f));function _0x12b00d(){const _0x4e756b=_0x36f0fc;if(_0x36cb26[_0x4e756b(0x1a6)]===0x0){_0x3fbff5[_0x4e756b(0x1a8)][_0x4e756b(0x189)]=_0x4e756b(0x196),_0x4866f8[_0x4e756b(0x17f)]=_0x4e756b(0x179),_0x74a2fa[_0x4e756b(0x174)]=!![],_0x5bd06d['disabled']=!![];return;}_0x3fbff5[_0x4e756b(0x1a8)][_0x4e756b(0x189)]=_0x4e756b(0x196),_0x74a2fa[_0x4e756b(0x19b)]='',_0x4866f8['textContent']='',_0x74a2fa['classList']['remove']('error-input'),_0x74a2fa[_0x4e756b(0x174)]=![],_0x5bd06d['disabled']=![],_0x74a2fa[_0x4e756b(0x1a2)]();}function _0x29fdc0(_0x5e5657){const _0x51d9a9=_0x36f0fc;return _0x5e5657[_0x51d9a9(0x184)]('NFD')['replace'](/[\u0300-\u036f]/g,'')['replace'](/\s+/g,'')[_0x51d9a9(0x1b5)]();}function _0x30bc5e(){const _0x5b789b=_0x36f0fc;if(_0x36cb26[_0x5b789b(0x1a6)]===0x0)return;const _0x4c9687=_0x74a2fa[_0x5b789b(0x19b)],_0x27b5cf=_0x29fdc0(_0x4c9687);if(!_0x27b5cf){_0x4866f8[_0x5b789b(0x17f)]='Tá\x20esquecendo\x20de\x20nada\x20não?',_0x4866f8[_0x5b789b(0x1a8)]['color']=_0x5b789b(0x1af),_0x74a2fa[_0x5b789b(0x1a2)]();return;}const _0x1c037a=btoa(_0x27b5cf);let _0x27fb3a=![];for(const _0x57a7ac of _0x36cb26){if(_0x1c037a===_0x57a7ac[_0x5b789b(0x194)]){_0x4866f8[_0x5b789b(0x17f)]='',_0x4866f8['style'][_0x5b789b(0x1b0)]='#2ecc71',_0x74a2fa[_0x5b789b(0x17a)][_0x5b789b(0x192)](_0x5b789b(0x1b2));_0xe16a1f&&(clearTimeout(_0xe16a1f),_0xe16a1f=null);setTimeout(()=>{const _0x3bfd4d=_0x5b789b;window[_0x3bfd4d(0x176)](_0x57a7ac[_0x3bfd4d(0x1ab)],_0x3bfd4d(0x185)),_0x74a2fa[_0x3bfd4d(0x19b)]='',_0x74a2fa['focus']();}),_0x27fb3a=!![];break;}}!_0x27fb3a&&(_0x4866f8[_0x5b789b(0x17f)]=_0x5b789b(0x18e),_0x4866f8[_0x5b789b(0x1a8)][_0x5b789b(0x1b0)]=_0x5b789b(0x1b4),_0x74a2fa[_0x5b789b(0x17a)][_0x5b789b(0x177)]('error-input'),_0x74a2fa[_0x5b789b(0x17a)][_0x5b789b(0x177)](_0x5b789b(0x1a3)),_0x74a2fa[_0x5b789b(0x1a2)](),_0x74a2fa[_0x5b789b(0x19b)]='',setTimeout(()=>{const _0x5057f4=_0x5b789b;_0x74a2fa['classList'][_0x5057f4(0x192)]('shake-input');},0x1f4),_0xe16a1f&&clearTimeout(_0xe16a1f),_0xe16a1f=setTimeout(()=>{const _0x133ba7=_0x5b789b;_0x74a2fa['classList'][_0x133ba7(0x192)](_0x133ba7(0x1b2)),_0x4866f8[_0x133ba7(0x17f)]==='Não\x20tens\x20o\x20que\x20é\x20necessário?'&&(_0x4866f8[_0x133ba7(0x17f)]=''),_0xe16a1f=null;},0xbb8));}_0x5bd06d[_0x36f0fc(0x19d)](_0x36f0fc(0x197),_0x30bc5e),_0x74a2fa[_0x36f0fc(0x19d)]('keypress',function(_0x1e24e9){const _0x5daccf=_0x36f0fc;_0x1e24e9[_0x5daccf(0x195)]===_0x5daccf(0x18d)&&(_0x1e24e9[_0x5daccf(0x193)](),_0x30bc5e());}),_0x12b00d();}));

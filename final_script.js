@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const base64EnteredPassword = btoa(normalizedEnteredPassword);
 
         if (base64EnteredLogin === correctLogin && base64EnteredPassword === correctPassword) {
-            feedbackElement.textContent = 'Login bem-sucedido! Redirecionando...';
+            feedbackElement.textContent = 'Login bem-sucedido!';
             feedbackElement.style.color = 'green';
             setTimeout(() => {
                 window.location.href = nextPageUrl;

@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #000000; /* Um fundo escuro para tema de enigma */
+    background-color: #000000; 
     color: #ecf0f1;
     margin: 0;
     padding: 20px;
@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-    color: #ffffff; /* Cor de destaque */
+    color: #ffffff; 
     margin-bottom: 25px;
     font-size: 2em;
     font-family: Perpetua;
@@ -51,8 +51,8 @@ h1 {
 }
 
 #answer-input.error-input {
-    border-color: #ff1900; /* Vermelho mais forte */
-    background-color: #f8a6a6; /* Fundo levemente rosado para erro */
+    border-color: #ff1900; 
+    background-color: #f8a6a6; 
 }
 
 @keyframes shake{
@@ -66,7 +66,7 @@ h1 {
 }
 
 #submit-button {
-    background-color: #000000; /* Laranja para o botão */
+    background-color: #000000; 
     color: white;
     padding: 12px 25px;
     border: none;
@@ -78,7 +78,7 @@ h1 {
 }
 
 #submit-button:hover {
-    background-color: #ffffff; /* Laranja mais escuro no hover */
+    background-color: #ffffff; 
     color: black;
     transform: scale(1.10);
     box-shadow: 0 0 8px white;
@@ -92,5 +92,5 @@ h1 {
 }
 
 #completion-message h2 {
-    color: #2ecc71; /* Verde para sucesso */
+    color: #2ecc71; 
 }

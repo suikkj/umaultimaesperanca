@@ -9,34 +9,34 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
-    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
-    overflow: hidden; /* Para evitar barras de rolagem caso o pseudo-elemento exceda um pouco */
+    position: relative; 
+    overflow: hidden; 
     background-color: #111;
     font-size: 18px;
 }
 body::before {
     content: "";
-    position: fixed; /* Cobre toda a viewport */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/public/Obrigado.png'); /* Sua imagem de fundo */
+    background-image: url('/public/Obrigado.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.6; /* Opacidade baixa para a imagem de fundo (ajuste conforme necessário, ex: 0.1 a 0.4) */
-    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+    opacity: 0.6; 
+    z-index: -1; 
 }
 
 .download-container {
-    margin-top: 20px; /* Espaçamento acima do botão */
-    margin-bottom: 15px; /* Espaçamento abaixo do botão */
+    margin-top: 20px; 
+    margin-bottom: 15px; 
 }
 
 .download-button {
     display: inline-block;
-    background-color: #4CAF50; /* Cor de fundo verde */
+    background-color: #4CAF50; 
     color: white;
     padding: 12px 25px;
     text-align: center;
@@ -53,11 +53,11 @@ body::before {
 }
 
 .content-container {
-    background-color: rgba(26, 26, 26, 0.75); /* Fundo #1a1a1a com 75% de opacidade (25% transparente) */
+    background-color: rgba(26, 26, 26, 0.75); 
     padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     max-width: 650px;
-    width: 90%; /* Responsividade */
-    z-index: 1; /* Garante que o container de conteúdo fique sobre o pseudo-elemento */
+    width: 90%; 
+    z-index: 1; 
 }

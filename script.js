@@ -1,56 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DEFINA SEUS ENIGMAS AQUI ---
     const enigmas = [
         {
-            encodedAnswer: "b2RpYXF1ZXRvZG9zYWd1YXJkYW1vcw==", // "odiaquetodosaguardamos" em Base64
+            encodedAnswer: "b2RpYXF1ZXRvZG9zYWd1YXJkYW1vcw==", 
             nextUrl: "odiaquetodosaguardamos.html"
         },
         {
-            encodedAnswer: "dW11bHRpbW9hZGV1cw==", // "umultimoadeus" em Base64
-            nextUrl: "umultimoadeus.html" // Página para "Um Ultimo Adeus"
+            encodedAnswer: "dW11bHRpbW9hZGV1cw==", 
+            nextUrl: "umultimoadeus.html" 
         },
         {
-            encodedAnswer: "ZWNhZg==", // "ecaf" em Base64
-            nextUrl: "ecaf.html" // Página para "E C A F"
+            encodedAnswer: "ZWNhZg==", 
+            nextUrl: "ecaf.html" 
         },
         {
-            encodedAnswer: "dGFtYm9yaWw=", // "tamboril" em Base64
-            nextUrl: "tamboril.html" // Página para "Tamboril"
+            encodedAnswer: "dGFtYm9yaWw=", 
+            nextUrl: "tamboril.html" 
         },
         {
-            encodedAnswer: "bHVjaWZlcg==", // "lucifer" em Base64
-            nextUrl: "luciferinside.html" // Página para "Tamboril"
+            encodedAnswer: "bHVjaWZlcg==", 
+            nextUrl: "luciferinside.html" 
         },
         {
-            encodedAnswer: "aG9yZGFz", // "hordas" em Base64
-            nextUrl: "hordas.html" // Página para "Tamboril"
+            encodedAnswer: "aG9yZGFz", 
+            nextUrl: "hordas.html" 
         },
         {
-            encodedAnswer: "bmlkZXJl", // "nidere" em Base64
-            nextUrl: "nidere.html" // Página para "Tamboril"
+            encodedAnswer: "bmlkZXJl", 
+            nextUrl: "nidere.html" 
         },
         {
-            encodedAnswer: "dW50aWx0aGVu", // "untilthen" em Base64
+            encodedAnswer: "dW50aWx0aGVu", 
             nextUrl: "codigodefinalizacao.html" 
         },
         {
-            encodedAnswer: "Z2FyZmllbGRrYXJ0", // "garfieldkart" em Base64
+            encodedAnswer: "Z2FyZmllbGRrYXJ0", 
             nextUrl: "https://x.com/joao_azeve56849/status/1909779523169566848"
         },
         {
-            encodedAnswer: "dGV0cmlz", // "tetris" em Base64
+            encodedAnswer: "dGV0cmlz", 
             nextUrl: "https://www.twitch.tv/cellbit"
         },
         {
-            encodedAnswer: "ZW5pZ21hZG9tZWRv", // "enigmadomedo" em Base64
+            encodedAnswer: "ZW5pZ21hZG9tZWRv", 
             nextUrl: "https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian"
         },
         {
-            encodedAnswer: "MTYzNzRfMzUyNg==", // "16374_3526" em Base64
+            encodedAnswer: "MTYzNzRfMzUyNg==", 
             nextUrl: "16374_3526.html"
         },
         {
-            encodedAnswer: "MDUyNjNfMjQxNQ==", // "05263_2415" em Base64
+            encodedAnswer: "MDUyNjNfMjQxNQ==", 
             nextUrl: "05263_2415.html"
         }
     ];
@@ -89,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .toLowerCase();
     }
 
-    function checkAnswer() { // Não é mais async
+    function checkAnswer() { 
         if (enigmas.length === 0) return;
 
         const userAnswerRaw = answerInputElement.value;
@@ -97,20 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!normalizedUserAnswer) {
             feedbackElement.textContent = 'Tá esquecendo de nada não?';
-            feedbackElement.style.color = '#e74c3c'; // Cor de aviso
+            feedbackElement.style.color = '#e74c3c'; 
             answerInputElement.focus();
             return;
         }
 
-        const base64UserAnswer = btoa(normalizedUserAnswer); // Codifica a resposta do usuário em Base64
+        const base64UserAnswer = btoa(normalizedUserAnswer); 
         let enigmaFound = false;
 
         for (const enigma of enigmas) {
-            // A propriedade no seu enigma já era 'encodedAnswer', o que é bom.
-            // Apenas garantimos que o valor armazenado é Base64 e a comparação é com a resposta do usuário codificada em Base64.
             if (base64UserAnswer === enigma.encodedAnswer) {
                 feedbackElement.textContent = '';
-                feedbackElement.style.color = '#2ecc71'; // Verde
+                feedbackElement.style.color = '#2ecc71'; 
                 answerInputElement.classList.remove('error-input');
 
                 if (errorResetTimeoutId) {
@@ -123,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.open(enigma.nextUrl, '_blank');
                     answerInputElement.value = '';
                     answerInputElement.focus();
-                    // A mensagem "Boa!" permanecerá até a próxima tentativa ou erro.
+                    
                 });
                 enigmaFound = true;
                 break;
@@ -132,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!enigmaFound) {
             feedbackElement.textContent = 'Não tens o que é necessário?';
-            feedbackElement.style.color = '#ff1200'; // Vermelho
+            feedbackElement.style.color = '#ff1200'; 
             answerInputElement.classList.add('error-input');
             answerInputElement.classList.add('shake-input');
             answerInputElement.focus();

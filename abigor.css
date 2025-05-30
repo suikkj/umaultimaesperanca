@@ -6,7 +6,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000; /* Um fundo escuro */
+    background-color: #000000; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -19,7 +19,7 @@ body, html {
     padding: 15px 30px;
     font-size: 1.2em;
     color: black;
-    background-color: white; /* Um vermelho escuro, remetendo a "Abigor" */
+    background-color: white; 
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -29,13 +29,13 @@ body, html {
 }
 
 .download-button:hover {
-    background-color: black; /* Vermelho um pouco mais escuro no hover */
+    background-color: black; 
     color: white;
-    transform: translateY(-2px); /* Efeito sutil de elevação */
+    transform: translateY(-2px); 
     box-shadow: 0 6px 12px rgba(153, 153, 153, 0.4);
 }
 
 .download-button:active {
-    background-color: #922b21; /* Vermelho ainda mais escuro ao clicar */
+    background-color: #922b21; 
     transform: translateY(0px);
 }

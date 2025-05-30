@@ -41,7 +41,7 @@ label {
 .password-wrapper {
     position: relative;
     width: 100%;
-    display: flex; /* Garante que o input ocupe o espaço */
+    display: flex; 
 }
 
 input[type="text"],
@@ -55,8 +55,8 @@ input[type="password"] {
     font-size: 16px;
     box-shadow: 0 0 0 0.2rem rgba(120, 120, 120, 0.3);
     background-color: #333; 
-    box-sizing: border-box; /* Adicionado para consistência e controle de padding */
-    width: 100%; /* Para que o input dentro do wrapper ocupe todo o espaço */
+    box-sizing: border-box; 
+    width: 100%; 
 } 
 
 .toggle-password-visibility {
@@ -67,11 +67,10 @@ input[type="password"] {
     cursor: pointer;
     user-select: none;
     color: #bdc3c7;
-    font-size: 0.85em; /* Ajustado para "Ver"/"Ocultar" */
+    font-size: 0.85em; 
     font-weight: 600;
-    padding: 2px 5px; /* Pequeno padding para o texto */
-    /* background-color: #4a4a4a; /* Opcional: fundo para o botão de texto */
-    /* border-radius: 3px; */
+    padding: 2px 5px; 
+    
 }
 
 input[type="text"]:focus,
